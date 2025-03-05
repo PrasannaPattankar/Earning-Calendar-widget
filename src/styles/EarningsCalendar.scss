@@ -36,18 +36,18 @@
 }
 
 .day-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: black;
   padding-bottom: 5px;
 }
 
-/* Labels should be outside the border */
+/* Labels (Before Open & After Close) should be outside the border */
 .labels {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 10px;
+  padding: 5px 10px;
 }
 
 .before-open-label {
@@ -64,10 +64,10 @@
   flex: 1;
 }
 
-/* Only data inside the bordered box */
+/* Bordered box should only contain earnings data */
 .day-box {
   background: #ffffff;
-  color: black;
+  border: 3px solid #c2a05c;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -75,9 +75,11 @@
   max-width: 240px;
 }
 
-.section {
-  padding: 10px;
-  border-top: none;
+/* Layout fix: Make sure data aligns properly */
+.data-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* No Data Message */
@@ -89,16 +91,11 @@
 }
 
 .before-open {
-  border-bottom: none;
+  text-align: left;
+  flex: 1;
 }
 
-h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #5a3e1b;
-}
-
-p {
-  color: #333;
-  font-size: 14px;
+.after-close {
+  text-align: right;
+  flex: 1;
 }
