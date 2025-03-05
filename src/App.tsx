@@ -8,7 +8,7 @@ import "./styles/global.scss";
 const App: React.FC = () => {
   return (
     <div className="app">
-      <h1>Earnings Calendar Widget</h1>
+      <h1></h1>
       <EarningsCalendar />
     </div>
   );

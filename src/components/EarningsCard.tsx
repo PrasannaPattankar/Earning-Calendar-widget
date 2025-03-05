@@ -28,7 +28,6 @@ const EarningsCard: React.FC<EarningsCardProps> = ({ earning, logo }) => {
       <div className="earnings-info">
         <span className="ticker">{earning.ticker}</span>
         <span className="eps">EPS: {earning.epsActual || "N/A"} (Est: {earning.epsEstimate || "N/A"})</span>
-        <span className="date">{earning.date}</span>
       </div>
     </div>
   );
