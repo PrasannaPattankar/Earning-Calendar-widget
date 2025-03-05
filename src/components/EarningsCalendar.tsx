@@ -6,6 +6,7 @@ import "../styles/EarningsCalendar.scss";
 
 /**
  * Component that displays a structured earnings calendar.
+ * It organizes earnings data by weekdays and shows them in a grid format.
  */
 const EarningsCalendar: React.FC = () => {
   const { earningsByDay, logos, loading } = useEarnings();
@@ -22,10 +23,10 @@ const EarningsCalendar: React.FC = () => {
       <div className="earnings-calendar">
         {Object.entries(earningsByDay).map(([day, { beforeOpen, afterClose }]) => (
           <div key={day} className="day-section">
-            {/* Day Title - Outside Border */}
+            {/* Display the Day Title Outside the Border */}
             <h2 className="day-title">{day}</h2>
 
-            {/* Labels - Outside the border */}
+            {/* Labels for Before Open and After Close */}
             <div className="labels">
               <h3 className="before-open-label">Before Open</h3>
               <h3 className="after-close-label">After Close</h3>
@@ -34,7 +35,7 @@ const EarningsCalendar: React.FC = () => {
             {/* Bordered Section for Earnings Data */}
             <div className="day-box">
               <div className="data-container">
-                {/* Before Open Data - Left Aligned */}
+                {/* Left-aligned Before Open Data */}
                 <div className="section before-open">
                   {beforeOpen.length > 0 ? (
                     beforeOpen.map((earning) => (
@@ -45,7 +46,7 @@ const EarningsCalendar: React.FC = () => {
                   )}
                 </div>
 
-                {/* After Close Data - Right Aligned */}
+                {/* Right-aligned After Close Data */}
                 <div className="section after-close">
                   {afterClose.length > 0 ? (
                     afterClose.map((earning) => (
