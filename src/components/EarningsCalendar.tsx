@@ -18,7 +18,7 @@ const EarningsCalendar: React.FC = () => {
   return (
     <div className="earnings-container">
       <h1 className="title">Most Anticipated Earnings Releases</h1>
-      <p className="subtitle">For the week beginning February 03, 2025</p>
+      <p className="subtitle">For the week beginning March 03, 2025</p>
 
       <div className="earnings-calendar">
         {Object.entries(earningsByDay).map(([day, { beforeOpen, afterClose }]) => (

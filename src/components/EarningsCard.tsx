@@ -24,7 +24,11 @@ const EarningsCard: React.FC<EarningsCardProps> = ({ earning, logo }) => {
 
   return (
     <div className="earnings-card" onClick={redirectToQuote}>
-      {logo ? <img src={logo} alt={earning.ticker} className="company-logo" /> : <div className="placeholder-logo">{earning.ticker}</div>}
+      {logo ? (
+        <img src={logo} alt={earning.ticker} className="company-logo" />
+      ) : (
+        <div className="placeholder-logo">{earning.ticker}</div>
+      )}
       <div className="earnings-info">
         <span className="ticker">{earning.ticker}</span>
         <span className="eps">EPS: {earning.epsActual || "N/A"} (Est: {earning.epsEstimate || "N/A"})</span>
