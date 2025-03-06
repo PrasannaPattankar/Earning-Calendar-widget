@@ -30,7 +30,7 @@ const getCurrentWeekDates = () => {
 export const fetchEarnings = async (): Promise<any[]> => {
   try {
     const { startDate, endDate } = getCurrentWeekDates();
-    console.log(`📡 Fetching earnings from ${startDate} to ${endDate}...`);
+   // console.log(`📡 Fetching earnings from ${startDate} to ${endDate}...`);
 
     const response = await axios.get(
       `${BASE_URL}?token=${API_KEY}&parameters[date_from]=${startDate}&parameters[date_to]=${endDate}&pagesize=1000`,
@@ -44,7 +44,7 @@ export const fetchEarnings = async (): Promise<any[]> => {
     }
 
     const earnings = response.data.earnings;
-    console.log("📡 Raw API Earnings Data:", earnings);
+    //console.log("📡 Raw API Earnings Data:", earnings);
 
     return earnings;
   } catch (error: unknown) {
@@ -71,7 +71,7 @@ export const fetchCompanyLogos = async (tickers: string[]): Promise<Record<strin
       return {};
     }
 
-    console.log(`📡 Fetching logos for ${tickers.length} tickers...`);
+   // console.log(`📡 Fetching logos for ${tickers.length} tickers...`);
 
     const logoMap: Record<string, string> = {};
     const BATCH_SIZE = 100;
@@ -79,7 +79,7 @@ export const fetchCompanyLogos = async (tickers: string[]): Promise<Record<strin
     for (let i = 0; i < tickers.length; i += BATCH_SIZE) {
       const batch = tickers.slice(i, i + BATCH_SIZE);
 
-      console.log(`📡 Fetching batch: ${batch.join(", ")}`);
+    //  console.log(`📡 Fetching batch: ${batch.join(", ")}`);
 
       const response = await axios.get(
         `${LOGO_URL}?token=${API_KEY}&search_keys=${batch.join(",")}&search_keys_type=symbol&fields=mark_vector_light,mark_vector_dark`,
@@ -107,7 +107,7 @@ export const fetchCompanyLogos = async (tickers: string[]): Promise<Record<strin
       });
     }
 
-    console.log("✅ Logos Fetched:", logoMap);
+    //console.log("✅ Logos Fetched:", logoMap);
     return logoMap;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
