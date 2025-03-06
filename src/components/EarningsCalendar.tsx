@@ -23,7 +23,7 @@ const EarningsCalendar: React.FC = () => {
       <div className="earnings-calendar">
         {Object.entries(earningsByDay).map(([day, { beforeOpen, afterClose }]) => (
           <div key={day} className="day-section">
-            {/* Display the Day Title Outside the Border */}
+            {/* Display the Day Title */}
             <h2 className="day-title">{day}</h2>
 
             {/* Labels for Before Open and After Close */}

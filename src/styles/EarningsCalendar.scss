@@ -24,9 +24,10 @@
 
 .earnings-calendar {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
   gap: 15px;
   padding: 20px;
+  overflow-y: auto; /* Vertical scroll for when data overflows */
 }
 
 .day-section {
@@ -42,7 +43,7 @@
   padding-bottom: 5px;
 }
 
-/* Labels (Before Open & After Close) should be outside the border */
+/* Labels for Before Open and After Close */
 .labels {
   display: flex;
   justify-content: space-between;
@@ -72,30 +73,29 @@
   padding: 10px;
   text-align: center;
   width: 100%;
-  max-width: 240px;
+  max-height: 500px;
+  overflow-y: auto; /* Allows vertical scrolling if the data is too long */
 }
 
-/* Layout fix: Make sure data aligns properly */
 .data-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
 
-/* No Data Message */
+/* Each section (Before Open and After Close) */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  //overflow-y: auto; /* Enable scrolling when there is too much data */
+  max-height: 400px; /* Limit the section height */
+}
+
 .no-data {
   color: gray;
   font-size: 14px;
   text-align: left;
   padding: 10px 0;
-}
-
-.before-open {
-  text-align: left;
-  flex: 1;
-}
-
-.after-close {
-  text-align: right;
-  flex: 1;
 }
